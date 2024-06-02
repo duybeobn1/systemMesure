@@ -7,14 +7,12 @@ import org.springframework.stereotype.Service;
 
 @Service
 public class CommandResultService {
-    @Autowired
-    private CommandResultRepository commandResultRepository;
 
-    public CommandResult saveCommandResult(String command, String result) {
-        CommandResult commandResult = new CommandResult();
-        commandResult.setCommand(command);
-        commandResult.setResult(result);
-        return commandResultRepository.save(commandResult);
+    @Autowired
+    private CommandResultRepository repository;
+
+    public CommandResult saveResult(String result) {
+        CommandResult commandResult = new CommandResult(result);
+        return repository.save(commandResult);
     }
 }
-    

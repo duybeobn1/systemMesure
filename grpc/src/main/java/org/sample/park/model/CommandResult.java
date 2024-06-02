@@ -1,16 +1,25 @@
 package org.sample.park.model;
-import jakarta.persistence.*;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class CommandResult {
-
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String command;
+    
     private String result;
+
+    public CommandResult() {
+    }
+
+    public CommandResult(String result) {
+        this.result = result;
+    }
 
     public Long getId() {
         return id;
@@ -18,14 +27,6 @@ public class CommandResult {
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public String getCommand() {
-        return command;
-    }
-
-    public void setCommand(String command) {
-        this.command = command;
     }
 
     public String getResult() {
