@@ -1,21 +1,17 @@
 package org.sample.park.model;
-
 import jakarta.persistence.*;
 
+
 @Entity
-@Table(name = "command_results")
 public class CommandResult {
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
     private String command;
-
-    @Column(nullable = false)
     private String result;
 
-    // Getters and Setters
     public Long getId() {
         return id;
     }
